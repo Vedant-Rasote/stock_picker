@@ -3,12 +3,13 @@ def stock_picker(a)
     best_sell = nil
     best_buy = nil
 
-    # compare each element in array with its higher indexed elements
+    # compare each element in array with its higher indexed elements, calculate the difference
     for i in 0..(a.length-1)
         for j in (i+1)..(a.length-1)
             if a[j] - a[i] > max_diff
+                # update difference if its higher than any previous calculated difference, save corresponding elements in variables
                 max_diff = a[j] - a[i]
-                best_buy  = a[i]
+                best_buy = a[i]
                 best_sell = a[j]
             end
         end
